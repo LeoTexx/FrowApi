@@ -17,6 +17,8 @@ The API allow you to:
 ```
 git clone https://github.com/LeoTexx/FrowApi
 yarn
+//or
+npm i
 ```
 
 *Connect to your own database on the file ormconfig.json
@@ -39,9 +41,16 @@ yarn
 
 ```
 yarn typeorm migration:run
+//or
+npm run typeorm migration:run
 ```
 
 ## Usage
+
+To test our routes, we are using Insomnia, just intall it from the link below
+https://insomnia.rest/download
+
+After the installation, just add the following routes and try it.
 
 POST localhost:4000/users :
 -Create new user, send a JSON object in the following format:
