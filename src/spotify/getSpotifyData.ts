@@ -16,7 +16,7 @@ export default async function getSpotifyData(req: Request, res: Response) {
     }
   );
 
-  spotifyApi.getNewReleases({ limit: 5, offset: 0, country: "US" }).then(
+  spotifyApi.getNewReleases({ limit: 50, offset: 0, country: "US" }).then(
     function (data) {
       var albuns = data.body.albums.items;
       var organizedAlbuns: object[] = [];
