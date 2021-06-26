@@ -9,10 +9,13 @@ class UserController {
 
   async searchUsers(req: Request, res: Response) {
     const repository = getRepository(User);
-    const { email, username } = req.body;
-    const findUser = await repository.findOne(
-      { where: { email } } || { where: { username } }
-    );
+    function userData() {
+      return req.body.username || req.body.email;
+    }
+    const data = userData();
+    const findUser = await repository.findOne({
+      where: [{ email: data }, { username: data }],
+    });
     return res.json({ username: findUser.username, email: findUser.email });
   }
 
